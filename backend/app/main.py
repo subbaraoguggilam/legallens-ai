@@ -7,7 +7,7 @@ from fastapi import Depends, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api.routes import analyze, ask, auth, compare, documents, evidence
+from app.api.routes import analyze, ask, auth, compare, documents, evidence, seed
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
 from app.core.rate_limit import rate_limiter
@@ -70,3 +70,4 @@ app.include_router(ask.router)
 app.include_router(analyze.router)
 app.include_router(compare.router)
 app.include_router(evidence.router)
+app.include_router(seed.router)
